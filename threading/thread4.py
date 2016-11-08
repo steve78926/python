@@ -4,10 +4,10 @@
 
 import threading
 import time
+import random
 
 con = threading.Condition()
 qlist = []
-#product.append("A")
 
 def producter():
     global qlist
@@ -15,9 +15,10 @@ def producter():
         while True:
             if not qlist:
                 print "当前没有商品，正在生产商品"
-                qlist.append("A")
+                p = int(random.random() * 1000)
+                qlist.append(p)
                 time.sleep(1)
-                print "已经生产商品A"
+                print "已经生产商品: %d" % p
 
                 con.notify()
                 print "通知商品已经生产"
