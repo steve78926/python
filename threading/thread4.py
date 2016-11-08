@@ -1,10 +1,13 @@
 #coding:utf8
 #status: fail
+#time : 2016-11-8 11:33 status: ok
 
 import threading
 import time
-qlist = []
+
 con = threading.Condition()
+qlist = []
+#product.append("A")
 
 def producter():
     global qlist
@@ -13,25 +16,24 @@ def producter():
             if not qlist:
                 print "当前没有商品，正在生产商品"
                 qlist.append("A")
+                time.sleep(1)
                 print "已经生产商品A"
 
                 con.notify()
-                print qlist
-                print "producter notifi..."
-            print "product waitting..."
+                print "通知商品已经生产"
+
             con.wait()
-            con.release()
             time.sleep(2)
 
 def customer():
     global qlist
-    print "customer start ..."
     if con.acquire():
         while True:
-            if qlist is not None:
-                print "qlist is true"
-                qlist = None
-                print "customer get %s" % qlist
+            if qlist:
+                print "库里有商品"
+                ret = qlist.pop()
+                print "顾客得到商品： %s" % ret
+                print "商品库状态：%s" % qlist
                 con.notify()
             con.wait()
             time.sleep(2)
@@ -42,6 +44,8 @@ def main():
     c = threading.Thread(target=customer,name="customer")
     p.start()
     c.start()
+    p.join()
+    c.join()
     print "main thread end"
 
 if __name__ == "__main__":
