@@ -20,7 +20,7 @@ class Producter(threading.Thread):
                     print "商品生成完成，正在通知顾客购买"
 
                 con.wait()
-                time.sleep(2)
+                time.sleep(1)
 
 class Customer(threading.Thread):
     def run(self):
@@ -36,7 +36,7 @@ class Customer(threading.Thread):
                     print "库存空，正在通知生产"
 
                 con.wait()
-                time.sleep(2)
+                time.sleep(1)
 
 def main():
     Producter().start()
