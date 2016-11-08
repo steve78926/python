@@ -1,5 +1,6 @@
 #coding:utf8
 #status: fail
+#desc: function 方式实现多线程
 #time : 2016-11-8 11:33 status: ok
 
 import threading
