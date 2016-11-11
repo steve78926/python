@@ -1,4 +1,5 @@
 #-*- encoding:utf8 -*-
+#status: fail
 
 import os
 

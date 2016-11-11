@@ -1,5 +1,6 @@
 #coding:utf8
 #desc: 递归输出当前目录下的子目录和文件
+#author: me
 import os
 import time
 
