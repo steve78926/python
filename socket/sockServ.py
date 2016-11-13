@@ -2,9 +2,14 @@
 import socket
 import random
 
+#另外一种则可返回状态与调用的shell命令的输出结果
+# >>> import commands
+# status, output = commands.getstatusoutput('ls -l')
+
 host = ''
 port = 8000
 bufsize = 1024
+
 
 def Server():
 
