@@ -1,0 +1,20 @@
+
+advcgi-b.py的错误
+
+
+
+1. <FORM METHOD=post ACTION="%s" ENCTYPE="multipart/form-data>    #data这里缺少右侧的"
+
+  改完1后,仍然报500
+
+2. INPUT NAME=cookie VALUE="%s"> (<I>optional</I>)</H3    #VALUE改为小写value
+
+  改完2后,仍然报500
+
+3. '<INPUT TYPE=checkbox NAME=lang VALUE="%s"%s > %s \n   #  "%s" %s  两个%s 之间有空格
+
+   改完3后,仍然报500
+
+4. def getCPPCookies(self):   该函数体修改完成,主要是空格,格式的调整
+
+   改完4后,仍然报500
