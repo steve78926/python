@@ -1,5 +1,6 @@
 #coding:utf8
-
+#desc: 客户端向tcp server服务端发送命令，并获得命令执行的结果。对端文件：tcpServerCmd.py
+#问题: 一次连接只能完成一个命令的执行，客户端若要发第二条命令，就需要重新启动
 import socket,threading
 
 host = '127.0.0.1'

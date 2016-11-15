@@ -1,5 +1,5 @@
 #coding:utf8
-#desc: 引用threading, select的tcp socket server, 接受客户端发来的命令，并将结果返回给客户端
+#desc: 引用threading, select的tcp socket server, 接受客户端发来的命令，并将结果返回给客户端。 对端文件：tcpClientCmd.py
 #问题：一次连接只能完成一个命令的执行，客户端若要发第二条命令，就需要重新启动
 
 
