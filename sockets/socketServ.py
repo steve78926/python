@@ -35,7 +35,7 @@ class Serverproc(object):
         except socket.error,(value,message):
             if self.server:
                 self.server.close()
-                print "open socket fail: %s " % message
+                print "open sockets fail: %s " % message
                 sys.exit(1)
 
     def run(self):
