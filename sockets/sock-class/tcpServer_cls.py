@@ -24,7 +24,7 @@ class Server(object):
             client, address = self.server.accept()
             print "new connect come from ", address
             while True:
-                retdata = client.recv(1024)
+                retdata = client.recv(2048)
                 print "recv data:%s" % retdata
                 if retdata == "stop":
                     break

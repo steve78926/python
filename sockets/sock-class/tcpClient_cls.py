@@ -11,10 +11,11 @@ def client():
     tcpCliSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     tcpCliSock.connect((host,port))
 
-    for i in range(3):
-        rand_data = random.choice(["abcde", "defakl", "ujikol", "qweafrf"])
+    for i in range(30):
+        rand_data = str(random.randint(1,1000)) + random.choice(["abcde", "ujikol", "qawsed", "rftgyh"])   #总是发送空数据, 空数据可能是回车或者换行符，因此，服务端必须检查data是否为空
         print "rand_data: |%s|" % rand_data
         tcpCliSock.send(rand_data)
+        print "randata have been send"
         recv_data = tcpCliSock.recv(bufsize)
         print "recive data:", recv_data
 
