@@ -10,7 +10,7 @@ bufsize = 1024
 def client():
     tcpCliSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     tcpCliSock.connect((host,port))
-    rand_data = random.choice(["abcde", "defakl", "ujikol", "qweafrf"])
+    rand_data = str(random.randint(1,1000)) + random.choice(["abcdegfdgsdfgsdfgsdfgsdfg", "defaklsdfgsdfgsdfgsdfg", "ujikosdfgsdfgsdfgsl", "qwsdfgsdfgsdfgsdfeafrf"])
     print "rand_data: |%s|" % rand_data
     tcpCliSock.send(rand_data)
     recv_data = tcpCliSock.recv(bufsize)
