@@ -8,7 +8,10 @@ import socket,sys,time,logging,select
 import threading
 
 LOGFILE = 'server_access.log'
-logging.basicConfig(filename = LOGFILE, level= logging.INFO)
+logging.basicConfig(filename = LOGFILE,
+                    level= logging.INFO,
+                    format='%(asctime)s %(levelname)s %(threadName)s %(message)s'
+                    )
 
 class Server(object):
     def __init__(self):
