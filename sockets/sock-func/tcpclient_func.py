@@ -3,7 +3,7 @@
 import socket
 import random, threading
 
-host = '127.0.0.1'
+host = '192.168.152.128'
 port = 8000
 bufsize = 1024
 

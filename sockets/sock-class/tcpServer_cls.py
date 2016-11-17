@@ -1,5 +1,6 @@
 #!/usr/local/bin/python2.7
 #coding:utf8
+#status: ok
 '''
 这个示例包含: socket，select, 根据客户端连接产生新的处理线程，日志模块,日志格式
 '''
