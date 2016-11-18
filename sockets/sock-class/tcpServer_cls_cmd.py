@@ -1,6 +1,6 @@
 #!/usr/local/bin/python2.7
 #coding:utf8
-#status: 未解决
+#status: 未解决: input 列表不能加入sys.stdin, 行号: 42, 46
 '''
 这个示例：socket, select, logging, threading
 '''
@@ -92,10 +92,5 @@ class requestHandler(Thread):
 
 if __name__ == "__main__":
     tcpServer().tcpHandler()
-
-
-
-
-
 
 

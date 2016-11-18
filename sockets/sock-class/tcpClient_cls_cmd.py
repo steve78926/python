@@ -1,5 +1,6 @@
 #!/usr/loca/bin/python2.7
 #encoding:utf8
+#status: ok
 
 import socket,sys,time
 from threading import Thread
