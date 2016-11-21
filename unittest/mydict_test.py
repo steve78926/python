@@ -6,9 +6,15 @@ from mydict import Dict
 
 class TestDict(unittest.TestCase):
 
+    def setUp(self):
+        print 'setUp...'
+
+    def tearDown(self):
+        print 'tearDwon'
+
     def test_init(self):
         d = Dict(a=1, b='test')
-        #print "test_init"
+        print "test_init"
         self.assertEquals(d.a, 1)
         self.assertEquals(d.b, 'test')
         self.assertTrue(isinstance(d, dict))
@@ -16,13 +22,13 @@ class TestDict(unittest.TestCase):
     def test_key(self):
         d = Dict()
         d['key'] = 'value'
-        #print "test_key: ",d
+        print "test_key: ",d
         self.assertEquals(d.key, 'value')
 
     def test_attr(self):
         d = Dict()
         d.key = 'value'
-        #print "test_attr:", d
+        print "test_attr:", d
         self.assertTrue('key' in d)
         self.assertEquals(d['key'], 'value')
 
