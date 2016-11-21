@@ -52,6 +52,24 @@
 
     单元测试
     文档测试:
+        Expected: 期待的， Got: 得到的
+        **********************************************************************
+File "C:\Python27\mydict.py", line 21, in __main__.Dict
+Failed example:
+    d2.empty
+Expected:
+    Traceback (most recent call last):
+        ...
+    AttributeError: 'Dict' object has no attribute 'empty'
+Got:
+    Traceback (most recent call last):
+      File "C:\Python27\lib\doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "<doctest __main__.Dict[8]>", line 1, in <module>
+        d2.empty
+      File "C:\Python27\mydict.py", line 37, in __getattr__
+        raise AttributeError(r"Dict object has no attribute '%s'" % key)
+    AttributeError: Dict object has no attribute 'empty'
 
 
 

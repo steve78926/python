@@ -30,7 +30,7 @@ class Dict(dict):
         try:
             return self[key]
         except KeyError:
-            raise AttributeError(r"'Dict' object has no attribute '%s'" % key)      # r"Dict'     Dict的左侧少个单引号
+            raise AttributeError(r"'Dict' object has no attribute '%s'" % key)      # r"Dict'     Dict的左侧少个单引号, 'Dict' 与第24行对应，如果第24行Dict没有'', 本行的Dict也不需要''
 
     def __setattr__(self, key, value):          #这里不要写成setter
         self[key] = value
