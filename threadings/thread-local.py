@@ -3,7 +3,7 @@
 #desc: thread local
 #date: 2016-11-8
 
-from threading import local
+import threading
 
 local_school = threading.local()
 
