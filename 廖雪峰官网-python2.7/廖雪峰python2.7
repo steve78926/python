@@ -80,26 +80,11 @@ Got:
 
     文件读写: 现代操作系统不允许普通的程序直接操作磁盘，所以，读写文件就是请求操作系统打开一个文件对象（通常称为文件描述符）
 
-    读文件: 要以读文件的模式打开一个文件对象，使用Python内置的open()函数，传入文件名和标示符
-    file-like Object:
-    二进制文件: 前面讲的默认都是读取文本文件，并且是ASCII编码的文本文件。要读取二进制文件，比如图片、视频等等，用'rb'模式打开文件即可：
-    字符编码: 要读取非ASCII编码的文本文件，就必须以二进制模式打开，再解码。比如GBK编码的文件： import codecs
-    写文件: 写文件和读文件是一样的，唯一区别是调用open()函数时，传入标识符'w'或者'wb'表示写文本文件或写二进制文件：
-    json: 序列化
-    d = dict(name='Bob', age=20, score=88)， pickle.dumps(d)，||||  f = open('dump.txt', 'wb')，pickle.dump(d, f)
-     d = dict(name='Bob', age=20, score=88)， json.dumps(d)， json.loads(json_str)
-
-2016-11-22(周二):
-
-    进程和线程
-        多进程：os.getpid()
-        multiprocessing: from multiprocessing import Process, p = Process(target=run_proc, args=('test',))
-        Pool: from multiprocessing import Pool,  p.apply_async(long_time_task, args=(i,))
-        进程间通信:
-
-    多线程: 我们前面提到了进程是由若干线程组成的，一个进程至少有一个线程。于线程是操作系统直接支持的执行单元
-
-
+        读文件: 要以读文件的模式打开一个文件对象，使用Python内置的open()函数，传入文件名和标示符
+        file-like Object:
+        二进制文件: 前面讲的默认都是读取文本文件，并且是ASCII编码的文本文件。要读取二进制文件，比如图片、视频等等，用'rb'模式打开文件即可：
+        字符编码: 要读取非ASCII编码的文本文件，就必须以二进制模式打开，再解码。比如GBK编码的文件： import codecs
+        写文件: 写文件和读文件是一样的，唯一区别是调用open()函数时，传入标识符'w'或者'wb'表示写文本文件或写二进制文件：
 
     操作文件和目录: import os , os.name
         环境变量: os.environ, os.getenv('PATH')
@@ -116,6 +101,23 @@ Got:
                  但是复制文件的函数居然在os模块中不存在！原因是复制文件并非由操作系统提供的系统调用
                  shutil模块提供了copyfile()的函数，你还可以在shutil模块中找到很多实用函数，它们可以看做是os模块的补充
                  要注意这些函数有的在os模块中，有的在os.path模块中。
+
+    json: 序列化
+        d = dict(name='Bob', age=20, score=88)， pickle.dumps(d)，||||  f = open('dump.txt', 'wb')，pickle.dump(d, f)
+        d = dict(name='Bob', age=20, score=88)， json.dumps(d)， json.loads(json_str)
+
+2016-11-22(周二):
+
+    进程和线程
+        多进程：os.getpid()
+        multiprocessing: from multiprocessing import Process, p = Process(target=run_proc, args=('test',))
+        Pool: from multiprocessing import Pool,  p.apply_async(long_time_task, args=(i,))
+        进程间通信: from multiprocessing import Process, Queue,
+
+    多线程: 我们前面提到了进程是由若干线程组成的，一个进程至少有一个线程。于线程是操作系统直接支持的执行单元
+
+
+
 
 
 
