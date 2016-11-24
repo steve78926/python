@@ -156,6 +156,9 @@ Got:
                     re_telephone = re.compile(r'^(\d{3})-(\d{3,8})$')  编译后生成Regular Expression对象，由于该对象自己包含了正则表达式，所以调用对应的方法时不用给出正则字符串。
                     re_telephone.match('010-12345').groups()    注意：这里没有表达式，只有字符串
 
+                作业：请尝试写一个验证Email地址的正则表达式。版本一应该可以验证出类似的Email：
+
+                re.match('(\w+)+\@\w+(\.\w+)+$', '280864129@qq.ac.ucas.cn')   不能识别 -
 
 
 
