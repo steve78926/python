@@ -182,7 +182,19 @@ Got:
              struct.unpack('>IH', '\xf0\xf0\xf0\xf0\x80\x80')   根据>IH的说明，后面的str依次变为I：4字节无符号整数和H：2字节无符号整数。
               struct.unpack('<ccIIIIIIHH', s)      cc表示头两个字节为char(字符) 后面IIIIII 表示6个4字节无符号整数，HH 2字节无符号整数。
 
+    hashlib:
+        摘要算法简介
+        摘要算法应用
 
+    itertools:
+        chain()
+        groupby()
+        imap(): r = map(lambda x: x*x, itertools.count(1)) 这个命令能让系统死机 由于map()返回的是一个list，所以当用它去处理无限序列的时候，它会尝试计算完之后才返回，但是序列是无限的，所以它会一直计算下去，致使其占用的系统的内存越来越高。
+        ifilter()
+
+    XML: DOM vs SAX
+
+    HTMLParser: 未练习
 
 
 
