@@ -8,7 +8,7 @@ from email.utils import parseaddr, formataddr
 import smtplib
 
 from_addr = 'fredmail03@126.com'
-password = raw_input('Password: ') or 'sjh937841'
+password = raw_input('Password: ') or 'xj.sozsi0i'
 to_addr1 = 'songjianhao@ucas.ac.cn'
 to_addr2 = 'fredmail16@sina.com'
 smtp_server = 'smtp.126.com'
