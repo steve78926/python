@@ -52,7 +52,7 @@ def print_info(msg, indent=0):
             print('%sAttachment: %s' % (' ' * indent, content_type))
 
 email = 'fredmail03@126.com'
-password = raw_input('Password:') or 'sjh937841'
+password = raw_input('Password:') or 'xiosows-0iu'
 pop3_server = 'pop3.126.com'
 
 server = poplib.POP3(pop3_server)
