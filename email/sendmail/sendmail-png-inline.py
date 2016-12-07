@@ -43,6 +43,7 @@ with open('boy.png', 'rb') as f:
     encoders.encode_base64(mime)
     msg.attach(mime)
 
+print 'msg=%s' % msg
 server = smtplib.SMTP(smtp_server, 25)
 server.set_debuglevel(1)
 server.login(from_addr, password)
