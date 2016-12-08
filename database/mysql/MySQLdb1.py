@@ -8,7 +8,7 @@ user = 'salt'
 passwd = '123456'
 db = 'test'
 try:
-    conn = MySQLdb.connect(host=host, user=user, passwd=passwd,db=db, use_unicode=True)    #不能用connection(),必须用connect()
+    conn = MySQLdb.connect(host=host, user=user, passwd=passwd,db=db, use_unicode=True)    #不能用connection(),必须用connect() ， 关键字参数passwd 不是password, db 不是database
     cursor = conn.cursor()
     #sql0 = "create table user (id varchar(20) PRIMARY KEY, name varchar(20))"
     query = "select * from user"
