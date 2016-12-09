@@ -15,8 +15,8 @@ class db_handler(object):
                                use_unicode=True)
         cursor = conn.cursor()                  #生成游标
         try:
-            yield cursor
-        except MySQLdb.Error,e:
+            yield cursor                    #yield之前的代码在调用with对象之前执行，然后在这里中断一下，执行with里面的代码，执行完后再执行yield之后的代码
+        except MySQLdb.Error,e:             #如果with对象报错，会在这一行捕获异常
             print "mysql error message:%s" % str(e)
         finally:
             cursor.close()
