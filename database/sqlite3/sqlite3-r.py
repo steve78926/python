@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-import sqlite3
+import database.sqlite3
 
-conn = sqlite3.connect('test.db')
+conn = database.sqlite3.connect('test.db')
 cursor = conn.cursor()
 cursor.execute('select * from user where id=?', ('1',))
 values = cursor.fetchall()

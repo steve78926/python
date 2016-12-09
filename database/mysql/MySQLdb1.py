@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 import MySQLdb
+from dbconfig import db_cfg
 
-#host = '192.168.152.132'
-host = '192.168.64.157'
-user = 'salt'
-passwd = '123456'
-db = 'test'
 try:
-    conn = MySQLdb.connect(host=host, user=user, passwd=passwd,db=db, use_unicode=True)    #不能用connection(),必须用connect() ， 关键字参数passwd 不是password, db 不是database
+    conn = MySQLdb.connect(host=db_cfg['host'],
+                           user=db_cfg['user'],
+                           passwd=db_cfg['password'],
+                           db=db_cfg['database'],
+                           use_unicode=True)    #不能用connection(),必须用connect() ， 关键字参数passwd 不是password, db 不是database
     cursor = conn.cursor()
     sql0 = "create table user (id varchar(20) PRIMARY KEY, name varchar(20))"
     query = "select * from user"

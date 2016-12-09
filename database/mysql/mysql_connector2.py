@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
 import mysql.connector
+from mysql_conn import conn
 
-host = '192.168.64.157'
-user = 'salt'
-password = '123456'
-database = 'test'
-
-conn = mysql.connector.connect(host=host, user=user, password=password, database=database, use_unicode=True)
 cursor = conn.cursor()
 droptab = 'DROP TABLE IF EXISTS student'
 cursor.execute(droptab)
