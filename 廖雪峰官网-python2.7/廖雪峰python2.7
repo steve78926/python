@@ -256,7 +256,11 @@ Got:
                       HTTP请求的所有输入信息都可以通过environ获得，HTTP响应的输出都可以通过start_response()加上函数返回值作为Body。
 
             使用Web框架:
-
+            使用模板: 传说中的MVC：Model-View-Controller，中文名“模型-视图-控制器”。
+                    Python处理URL的函数就是C：Controller，Controller负责业务逻辑，比如检查用户名是否存在，取出用户信息等等；
+                    包含变量{{ name }}的模板就是V：View，View负责显示逻辑，通过简单地替换一些变量，View最终输出的就是用户看到的HTML
+                    MVC中的Model在哪？Model是用来传给View的，这样View在替换变量的时候，就可以从Model中取出相应的数据, 上面的例子中，Model就是一个dict：
+                    最后，一定要把模板放到正确的templates目录下，templates和app.py在同级目录下
 
 
 
