@@ -4,11 +4,7 @@ from contextlib import contextmanager
 from dbconfig import db_cfg
 import MySQLdb
 
-conn = MySQLdb.connect(host=db_cfg['host'],
-                       user=db_cfg['user'],
-                       passwd=db_cfg['password'],
-                       db = db_cfg['database'],
-                       use_unicode = True)
+
 
 class MySQLhandler(object):
 
@@ -18,6 +14,11 @@ class MySQLhandler(object):
     @contextmanager
     def db_handler(self,commit=False):
         try:
+            conn = MySQLdb.connect(host=db_cfg['host'],       #注意数据库的连接conn必须包含在db_handler里，否则mysql.exec.py里的create, insert,query函数不能同时执行，报错close a closed connection
+                       user=db_cfg['user'],
+                       passwd=db_cfg['password'],
+                       db = db_cfg['database'],
+                       use_unicode = True)
             cursor = conn.cursor()
             yield cursor
         except MySQLdb.Error,e:
