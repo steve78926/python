@@ -29,9 +29,12 @@ class MySQLhandler(object):
             cursor.close()
             conn.close()
 
-    def create_tab(self):
-
-
+    def create(self):
+        with self.db_handler() as cursor:
+            droptab = 'DROP TABLE IF EXISTS %s' % self.tabname
+            creattab = "create table %s (id varchar(10) primary key,name varchar(20), age int) engine=innodb" % self.tabname
+            cursor.execute(droptab)
+            cursor.execute(creattab)
 
     def insert(self,data):
         with self.db_handler(commit=True) as cursor:
@@ -46,10 +49,4 @@ class MySQLhandler(object):
             for row in res:
                 for col in row:
                     print col,
-                print "\n"
-
-data = {'id':'008','name':'student1','age':198}
-
-db = MySQLhandler('student_in')
-#db.insert(data)
-db.query()
+                print "\r\n"
