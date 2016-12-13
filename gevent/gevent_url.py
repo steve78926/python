@@ -1,7 +1,7 @@
 #-*- coding: utf8 -*-
 # envir: win10
 
-from gevent import monkey; monkey.patch_all()
+from gevent import monkey; monkey.patch_all()     #monkey patch的作用就是把urllib之类的io操作切换协程，你理解为python标准库的io操作被gevent替换了
 import gevent
 import urllib2
 
