@@ -1,0 +1,68 @@
+def init() of class _DbCtx(threading.local)    _DbCtx是threading.local对象
+|
+|--->def cursor(self) of class _LasyConnection()
+        |
+        |---> engine.connect()
+               |
+               |--->connect(self) of class _Engine(object)
+                       |
+                       |---> create_engine()
+                              |
+                              |---> _Engine(lambda: mysql.connector.connect(**params))
+
+===========================================================================================
+
+def connection()  返回实例化 _ConnectionCtx()对象
+   |
+   |--->def __enter__(self) of class _ConnectionCtx(object):
+        |
+        |----->def init(self) of class _DbCtx(threading.local):
+
+def transaction()   返回实例化_TransactionCtx() 对象
+   |
+   |---> class _TransactionCtx(object):
+          |
+          |------> def init(self) of class _DbCtx(threading.local):
+
+========================================================================
+
+@with_connection
+def select(sql, *args):
+   \
+    \
+     \
+      \
+       \
+@with_connection
+def select_one(sql, *args):   ------>   _select(sql, False, *args)
+       /
+      /
+     /
+    /
+   /
+@with_connection
+def select_one(sql, *args):
+
+==========================================================
+
+def update(sql, *args):
+  \
+   \
+    \  ---> _update(sql, *args)
+   /
+  /
+ /
+def insert(table, **kw):
+
+===========================================
+
+def with_connection(func): 被装饰的函数运行之前先运行 with _ConnectionCtx():
+
+  被装饰函数：
+    def select_one(sql, *args):
+    def select_int(sql, *args):
+    def select(sql, *args):
+    def _update(sql, *args):
+
+def with_transaction(func):  被装饰的函数运行之前先运行 with _TransactionCtx():
+    被装饰函数：无

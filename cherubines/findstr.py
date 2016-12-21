@@ -9,7 +9,6 @@ def find_last_str(mainstr,substr):
         retp = p
         p += 2          # 2是子串的长度
         p = mainstr.find(substr,p)
-
     print retp
 
 str1 = 'aaccccxcceccxcc908ccicc'
