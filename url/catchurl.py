@@ -1,15 +1,18 @@
 #-*- coding: utf-8 -*-
 
+#link: http://python.jobbole.com/83588/#article-comment
+#link: https://github.com/kazuar/login_scraper_example/blob/master/login_scraper_example.py
+
 import requests
 from lxml import html
 
 USERNAME = "admin"
-PASSWORD = "dfklsdjk16"
+PASSWORD = "password"
 
-LOGIN_URL = "http://124.16.75.45/login"
-URL = "http://124.16.75.45/FindUser"
-URL2 = "http://124.16.75.45/register"
-URL3 = "http://124.16.75.45/mgmtchpasswd"
+LOGIN_URL = "http://192.168.30.100/login"
+URL = "http://192.168.30.100/FindUser"
+URL2 = "http://192.168.30.100/register"
+URL3 = "http://192.168.30.100/mgmtchpasswd"
 
 def main():
     session_requests = requests.session()
