@@ -1,5 +1,8 @@
 #-*- coding: utf-8 -*-
 
+#link: http://python.jobbole.com/83588/#article-comment
+#link: https://github.com/kazuar/login_scraper_example/blob/master/login_scraper_example.py
+
 import requests
 from lxml import html
 
